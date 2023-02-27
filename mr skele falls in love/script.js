@@ -1,13 +1,16 @@
+//sets variables and then getElementById to link them to their elements on the stylesheet
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var score = document.getElementById("score")
 var yourScore = 0
 
+//listens for the block to do it's animation and every time it does, adds one to yourScore
 block.addEventListener('animationiteration', () => { yourScore++; 
+//makes the textContent of the element score display yourScore 
     document.getElementById("score").textContent = yourScore;
 });
 
-
+//function jump checks to see if the class animate is added, adds if it isn't, changes to jump sprite image, then removes it after 500ms and changes to stand sprite, miss-spelled "strand" in the files
 function jump(){
     if(character.classList == "animate"){return}
     character.classList.add("animate")
@@ -19,7 +22,7 @@ function jump(){
     
 }
 
-
+//var checkDead determines if the character and block are touching and ends the game if they are
 var checkDead = setInterval(function(){
     let characterTop =parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft =parseInt(window.getComputedStyle(block).getPropertyValue("left"));
@@ -29,7 +32,7 @@ var checkDead = setInterval(function(){
     }
 }, 10);
 
-// this is supposed to make the block enemy go faster
+// this is supposed to make the block enemy go faster, there's a better way to do this.
 var speedUp = setInterval(function(){
     if (yourScore<5){return}
    
