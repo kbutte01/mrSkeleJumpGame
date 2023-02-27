@@ -24,9 +24,12 @@
     top: 146px;
     left: 30px; 
 } 
+/*next lines define the class animate*/
 .animate{
     animation: jump 500ms;
 }
+
+/*next lines describe the steps in the jump animation*/
 @keyframes jump{
     0%{top:150px;}
     40%{top: 100px;}
@@ -43,6 +46,8 @@
     animation: block 2s linear infinite;
 
 }
+
+/*next lines describe the steps in the block animation*/
 @keyframes block{
     0%{left:480px;}
     100%{left:0px;}
